@@ -1,11 +1,11 @@
 import express from "express";
 
-import loginController from "./loginController";//will implement later
+import loginController from "./loginController";
 
 const router = express.Router();
 router.post(
   "/checkCredentials",
-  coreController.checkCredentials
+  loginController.checkCredentials
 );
 
 export default router;
