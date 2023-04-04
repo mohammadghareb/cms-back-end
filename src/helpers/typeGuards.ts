@@ -1,18 +1,18 @@
 const toStr = Object.prototype.toString;
 
-export const isNullOrUndefined=(v: unknown): v is null | undefined =>{
-    return v === null || v === undefined || typeof v === "undefined";
+export const isNullOrUndefined=(value: unknown): value is null | undefined =>{
+    return value === null || value === undefined || typeof value === "undefined";
   }
   
-export const isDefinedString=(v: unknown): v is string=> {
-    return typeof v === "string" && v !== "" && v !== null;
+export const isDefinedString=(value: unknown): value is string=> {
+    return typeof value === "string" && value !== "" && value !== null;
   }
 
-  export const isDefinedObject=(v: unknown): v is Object =>{
-    if (typeof v !== "object" || isNullOrUndefined(v)) return false;
+  export const isDefinedObject=(value: unknown): value is Object =>{
+    if (typeof value !== "object" || isNullOrUndefined(value)) return false;
     return (
-      toStr.call(v) === "[object Object]" &&
-      Object.keys(v).length > 0 &&
-      v !== null
+      toStr.call(value) === "[object Object]" &&
+      Object.keys(value).length > 0 &&
+      value !== null
     );
   }

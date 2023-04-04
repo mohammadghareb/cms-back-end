@@ -30,4 +30,13 @@
   return `${year}-${s_month}-${s_day} ${s_hour}:${s_minute}:${s_second}`;
 };
 
+const dateHelper = {
+  getCurrentTime(type: "STRING" | "NUMBER") {
+    let currentDate = new Date();
+    return type === "STRING"
+      ? getFormmatedDate(currentDate)
+      : currentDate.getTime();
+  },
  
+};
+ export default dateHelper;
